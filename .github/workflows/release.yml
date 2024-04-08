@@ -32,8 +32,8 @@ jobs:
       
       - name: Create .env file
         run: |
-          echo "PUBLIC_TAURI_DEV=true" > .env
-          echo "PUBLIC_ORIGIN=https://airliner.app"
+          echo "PUBLIC_TAURI_DEV=true" >> .env
+          echo "PUBLIC_ORIGIN=https://airliner.app" >> .env
           echo "PUBLIC_APP_ASSETS=assets" >> .env
           echo "PUBLIC_APP_NAME=Airliner" >> .env
           echo "PUBLIC_APP_COLOR=blue" >> .env
