@@ -31,10 +31,12 @@ import {
 } from 'lucide-react';
 import Link from 'next/link';
 import { supabase } from '@/utils/supabase';
+import { useAppState } from '@/state/appState';
 
 export default function Home() {
 	const { toast } = useToast();
 	const router = useRouter()
+	const {  userStatus } = useAppState();
 
 	const [email, setEmail] = useState('');
 	const [request, setRequest] = useState('');
@@ -75,6 +77,21 @@ export default function Home() {
 								Download for Windows
 								<ChevronRight />
 							</Button>
+							{userStatus === 'user' ? (
+					<Button asChild>
+						<Link href="/dashboard" className="text-sm">
+							Dashboard
+						</Link>
+					</Button>
+				) : (
+					<div className="flex gap-3">
+						<Button variant="secondary" className='rounded-full' asChild>
+							<Link href="/get-started" className="text-sm">
+								Log In
+							</Link>
+						</Button>
+					</div>
+				)}
 						</div>
 						{/* <Link href="/get-started">
 								<Button

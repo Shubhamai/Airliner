@@ -228,11 +228,14 @@ export default function Dashboard() {
 					<h1 className="text-3xl font-bold items-start text-center">
 						Welcome to your account {user?.id}
 					</h1>
+					<h3 className="text-lg text-center text-slate-500">
+						You can now use this account to access the Airliner app.
+					</h3>
 					<div className="flex gap-2 justify-center">
-						<Button onClick={handleManageSubscription}>
+						{/* <Button onClick={handleManageSubscription}>
 							<CalendarCheck2 className="w-4 h-4 mr-1" />
 							Manage Subscription
-						</Button>
+						</Button> */}
 						<Button variant="destructive" onClick={handleSignOut}>
 							<LogOutIcon className="w-4 h-4 mr-1" />
 							Sign Out
@@ -258,7 +261,7 @@ export default function Dashboard() {
 						<h1 className="font-bold text-red-950">Danger Zone</h1>
 
 						<h5 className="text-slate-500">
-							All of your data including your personal data, subscription and payment details will
+							All of your data including your personal data, and conversation history will
 							be wiped out immediatly
 						</h5>
 						<h5 className="font-medium">
