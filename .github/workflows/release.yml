@@ -1,0 +1,53 @@
+name: 'release'
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  publish-tauri:
+    permissions:
+      contents: write
+    strategy:
+      fail-fast: false
+      matrix:
+        platform: [windows-latest]
+
+    runs-on: ${{ matrix.platform }}
+    steps:
+      - uses: actions/checkout@v3
+      - name: setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - uses: pnpm/action-setup@v2
+        name: Install pnpm
+        with:
+          version: 8
+          run_install: false
+          
+      - name: install Rust stable
+        uses: dtolnay/rust-toolchain@stable
+      
+      - name: Create .env file
+        run: |
+          echo "PUBLIC_APP_ASSETS=${{ secrets.PUBLIC_APP_ASSETS }}" >> .env
+          echo "PUBLIC_APP_NAME=${{ secrets.PUBLIC_APP_NAME }}" >> .env
+          echo "PUBLIC_ORIGIN=${{ secrets.PUBLIC_ORIGIN }}" >> .env
+          
+      - name: install frontend dependencies
+        run: pnpm install # change this to npm or pnpm depending on which one you use
+
+      - name: Cargo Cache
+        uses: Swatinem/rust-cache@v2
+      
+      - uses: tauri-apps/tauri-action@v0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tagName: app-v__VERSION__ # the action automatically replaces \_\_VERSION\_\_ with the app version
+          releaseName: 'App v__VERSION__'
+          releaseBody: 'See the assets to download this version and install.'
+          releaseDraft: true
+          prerelease: false
