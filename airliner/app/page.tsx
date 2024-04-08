@@ -15,6 +15,8 @@ import {
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { FormEvent, useState } from 'react';
+import { useRouter } from 'next/navigation'
+
 
 import { useToast } from '@/components/ui/use-toast';
 import {
@@ -32,6 +34,7 @@ import { supabase } from '@/utils/supabase';
 
 export default function Home() {
 	const { toast } = useToast();
+	const router = useRouter()
 
 	const [email, setEmail] = useState('');
 	const [request, setRequest] = useState('');
@@ -57,46 +60,22 @@ export default function Home() {
 							flight plan.
 						</h4>
 						{/* <div className="flex flex-row gap-4"> */}
-						<form
+						<div
 							className="flex flex-row gap-4"
-							onSubmit={async (event: FormEvent<HTMLFormElement>) => {
-								event.preventDefault();
-
-								const formData = new FormData(event.currentTarget);
-
-								const { data, error } = await supabase
-									.from('waitlist')
-									.insert([
-										{
-											email: formData.get('email')
-										}
-									])
-									.select();
-
-								if (!error) {
-									toast({
-										description: 'You have been added to the waitlist!'
-									});
-								} else {
-									toast({
-										description: 'There was an error adding you to the waitlist.'
-									});
-								}
-							}}
 						>
-							<Input className="w-2/5" placeholder="Email" type="email" name="email" />
 							<Button
 								className="flex gap-2 rounded-3xl border-2 pl-6 pr-4 border-foreground font-bold hover:shadow-xl transition-shadow"
 								type="submit"
 								onClick={() => {
-									setEmail('');
-									setRequest('');
+									// redirect to https://github.com/shubhamai/airliner, in a new tab
+									window.open('https://github.com/Shubhamai/Airliner/releases', '_blank');
 								}}
+
 							>
-								Join waitlist
+								Download for Windows
 								<ChevronRight />
 							</Button>
-						</form>
+						</div>
 						{/* <Link href="/get-started">
 								<Button
 									className="flex gap-2 w-fit rounded-3xl border-2 pl-6 pr-4 border-foreground font-bold hover:shadow-xl transition-shadow"
@@ -186,9 +165,8 @@ export default function Home() {
 				</main>
 			</div>
 			<footer className="flex flex-row gap-3 items-center">
-				<Link href="mailto:hello@airliner.app">
-					{/* <Mail width={20} height={22} strokeWidth={1} /> */}
-					hello@airliner.app
+				<Link href="https://github.com/Shubhamai/Airliner">
+					github.com/Shubhamai/Airliner
 				</Link>
 			</footer>
 		</div>

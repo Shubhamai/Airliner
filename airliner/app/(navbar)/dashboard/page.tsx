@@ -292,12 +292,6 @@ export default function Dashboard() {
 						</Dialog>
 					</div>
 
-					<p className="font-bold text-slate-600">
-						Need help? Email{' '}
-						<a href="mailto:hello@airliner.app" className="ml-1 underline text-slate-800">
-							hello@airliner.app
-						</a>
-					</p>
 				</div>
 			) : (
 				<div></div>
