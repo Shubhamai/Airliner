@@ -1,8 +1,5 @@
 <h1><p align="center">Airliner </p></h1>
 
-<!-- <p align="center"><a href="https://github.com/Shubhamai/Airliner"><img alt="Airliner" src="assets/brand/banner.png" width="100%"/></a></p> -->
-<!-- <hr> -->
-
 <p align="center"> Your Co-Pilot and Virtual ATC for Microsoft Flight Simulator ( in Development ) </p>
 
 <p align="center">
@@ -41,16 +38,3 @@
 # Usage
 
 1. Visit the [releases page](https://github.com/shubhamai/airliner/releases/latest) and download the latest version on your platform. For Windows, a `.msi` installer will be provided, simply double-click on the installer and follow the installation steps. After Installing, you can simply run `Airliner` from the start menu.
-
-
-## Bug Report
-
-If you see an error message or run into an issue, please [open a new issue](https://github.com/Shubhamai/Airliner/issues/new/choose). This effort is valued and helps all the users.
-
-## Contribution
-
-See [Contributing.md](./CONTRIBUTING.md).
-
-## Feature Request
-
-If you have any idea or a missing feature you would like to see, please [submit a feature request](https://github.com/Shubhamai/Airliner/issues/new/choose) or [discuss](https://github.com/Shubhamai/Airliner/discussions) it with other users.
