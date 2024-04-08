@@ -32,9 +32,14 @@ jobs:
       
       - name: Create .env file
         run: |
-          echo "PUBLIC_APP_ASSETS=${{ secrets.PUBLIC_APP_ASSETS }}" >> .env
-          echo "PUBLIC_APP_NAME=${{ secrets.PUBLIC_APP_NAME }}" >> .env
-          echo "PUBLIC_ORIGIN=${{ secrets.PUBLIC_ORIGIN }}" >> .env
+          echo "PUBLIC_TAURI_DEV=true" > .env
+          echo "PUBLIC_ORIGIN=https://airliner.app"
+          echo "PUBLIC_APP_ASSETS=assets" >> .env
+          echo "PUBLIC_APP_NAME=Airliner" >> .env
+          echo "PUBLIC_APP_COLOR=blue" >> .env
+          echo "PUBLIC_SUPABASE_URL=https://ahkafqqjqhtlhbmhrmzx.supabase.co" >> .env
+          echo "PUBLIC_SUPABASE_ANON=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFoa2FmcXFqcWh0bGhibWhybXp4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTI1NTEwODEsImV4cCI6MjAyODEyNzA4MX0.WRhvCFHz-nJ63ixDyN84GgAwtoMnr0ZLNRZjrP3sGyQ" >> .env
+
           
       - name: install frontend dependencies
         run: pnpm install # change this to npm or pnpm depending on which one you use
