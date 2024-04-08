@@ -72,4 +72,3 @@ export default async function middleware(request: NextRequest): Promise<Response
 			
 		}
 	}
-}
