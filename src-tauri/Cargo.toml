@@ -1,11 +1,10 @@
 [package]
-name = "app"
+name = "Airliner"
 version = "0.0.1"
-description = "A Tauri App"
-authors = ["you"]
-license = ""
-repository = ""
-default-run = "app"
+description = "Your Co-Pilot and Virtual ATC for Microsoft Flight Simulator"
+authors = ["Shubhamai"]
+license = "GPL-3.0"
+repository = "https://github.com/Shubhamai/Airliner"
 edition = "2021"
 rust-version = "1.59"
 

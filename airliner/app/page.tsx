@@ -14,7 +14,7 @@ import {
 } from '@/components/ui/dialog';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { FormEvent, useState } from 'react';
+import { FormEvent, useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation'
 
 
@@ -40,6 +40,25 @@ export default function Home() {
 
 	const [email, setEmail] = useState('');
 	const [request, setRequest] = useState('');
+
+	useEffect(() => {
+
+		const addAnonymousUser = async () => {
+			const { data, error } = await supabase.auth.signInAnonymously();
+
+
+		if (error) {
+			toast({
+				title: 'Error',
+				description: error.message
+			});
+		}
+	
+	}
+
+	addAnonymousUser()
+	}
+	, []);
 
 	return (
 		<div className="flex flex-col items-center justify-between min-h-screen py-4">
@@ -77,7 +96,7 @@ export default function Home() {
 								Download for Windows
 								<ChevronRight />
 							</Button>
-							{userStatus === 'user' ? (
+							{/* {userStatus === 'user' ? (
 					<Button asChild>
 						<Link href="/dashboard" className="text-sm">
 							Dashboard
@@ -91,7 +110,7 @@ export default function Home() {
 							</Link>
 						</Button>
 					</div>
-				)}
+				)} */}
 						</div>
 						{/* <Link href="/get-started">
 								<Button

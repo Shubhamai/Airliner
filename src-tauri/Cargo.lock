@@ -3,6 +3,21 @@
 version = 3
 
 [[package]]
+name = "Airliner"
+version = "0.0.1"
+dependencies = [
+ "anyhow",
+ "log",
+ "rdev",
+ "serde",
+ "tauri",
+ "tauri-build",
+ "tauri-plugin-deep-link",
+ "tauri-plugin-log",
+ "tauri-plugin-single-instance",
+]
+
+[[package]]
 name = "addr2line"
 version = "0.21.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -61,21 +76,6 @@ name = "anyhow"
 version = "1.0.75"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "a4668cab20f66d8d020e1fbc0ebe47217433c1b6c8f2040faf858554e394ace6"
-
-[[package]]
-name = "app"
-version = "0.0.1"
-dependencies = [
- "anyhow",
- "log",
- "rdev",
- "serde",
- "tauri",
- "tauri-build",
- "tauri-plugin-deep-link",
- "tauri-plugin-log",
- "tauri-plugin-single-instance",
-]
 
 [[package]]
 name = "async-broadcast"
