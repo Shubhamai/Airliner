@@ -15,7 +15,7 @@
 	import type { User } from '@supabase/supabase-js';
 
 	export let idToken: string;
-	export let stripeCustomerId: string;
+	// export let stripeCustomerId: string;
 
 	let title: string = '';
 
@@ -92,7 +92,7 @@
 
 		headers: {
 			Authorization: `${idToken}`,
-			stripeCustomerId: `${stripeCustomerId}`
+		// 	stripeCustomerId: `${stripeCustomerId}`
 		},
 
 		async onError(error) {
@@ -118,9 +118,9 @@
 				await fetch(`${PUBLIC_ORIGIN}/api/speech`, {
 					method: 'POST',
 					headers: {
-						'Content-Type': 'application/json',
+					// 	'Content-Type': 'application/json',
 						Authorization: `${idToken}`,
-						stripeCustomerId: `${stripeCustomerId}`
+					// 	stripeCustomerId: `${stripeCustomerId}`
 					},
 					body: JSON.stringify({
 						text: data.content,
@@ -159,7 +159,7 @@
 					headers: {
 						'Content-Type': 'multipart/form-data',
 						Authorization: `${idToken}`,
-						stripeCustomerId: `${stripeCustomerId}`
+						// stripeCustomerId: `${stripeCustomerId}`
 					}
 				})
 				.then(async (response) => {

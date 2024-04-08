@@ -8,6 +8,8 @@
 	import { SettingsState } from '../../state';
 
 	onMount(async () => {
+		const { data, error } = await supabase.auth.signInAnonymously();
+
 		const {
 			data: { user: UserData }
 		} = await supabase.auth.getUser();

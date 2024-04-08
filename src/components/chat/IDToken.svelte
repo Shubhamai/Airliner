@@ -10,8 +10,7 @@
 
 	const loadData = async () => {
 		idToken = (await supabase.auth.getSession()).data?.session?.access_token;
-
-		stripeCustomerId = $SettingsState.user?.user_metadata.stripeId;
+		// stripeCustomerId = $SettingsState.user?.user_metadata.stripeId;
 	};
 
 	afterUpdate(async () => {
@@ -23,9 +22,9 @@
 	});
 </script>
 
-{#if idToken && stripeCustomerId}
+{#if idToken}
 	<!-- //  && conversationId} -->
-	<slot {idToken} {stripeCustomerId} />
+	<slot {idToken} />
 	<!-- {conversationId} /> -->
 {:else}
 	<p class="p-10 text-slate-700">
