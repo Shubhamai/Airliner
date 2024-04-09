@@ -13,15 +13,6 @@
     <a href="https://github.com/Shubhamai/Airliner/releases/">
       Download
     </a>
-    <span> | </span>
-    <a href="https://github.com/Shubhamai/Airliner/discussions">
-      Chat
-    </a>
-    <span> | </span>
-    <a href="https://github.com/Shubhamai/Airliner/blob/main/CONTRIBUTING.md">
-      Contributing
-    </a>
-  </h3>
 </div>
 
 <hr>
