@@ -1,6 +1,6 @@
 <h1><p align="center">Airliner </p></h1>
 
-<p align="center"> Your Co-Pilot and Virtual ATC for Microsoft Flight Simulator ( in Development ) </p>
+<p align="center"> Your Co-Pilot and Virtual ATC for Microsoft Flight Simulator</p>
 
 <p align="center">
 <a href="https://github.com/shubhamai/Airliner/releases/latest"><img alt="" src="https://badgen.net/badge/Download/Windows/?color=blue&icon=windows&label"/></a> 
