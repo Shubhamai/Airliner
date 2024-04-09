@@ -64,18 +64,22 @@ export default function Home() {
 						<div
 							className="flex flex-row gap-4"
 						>
-							<Button
-								className="flex gap-2 rounded-3xl border-2 pl-6 pr-4 border-foreground font-bold hover:shadow-xl transition-shadow"
-								type="submit"
-								onClick={() => {
+							<Link
+								className="flex gap-2 rounded-3xl border-2 pl-6 pr-4 border-foreground font-bold hover:shadow-xl transition-shadow bg-slate-800 text-slate-100 shadow hover:bg-slate-900 h-9 px-4 py-2 items-center justify-center"
+								// type="submit"
+								// onClick={() => {
 									// redirect to https://github.com/shubhamai/airliner, in a new tab
-									window.open('https://github.com/Shubhamai/Airliner/releases', '_blank');
-								}}
+									// window.open('https://github.com/Shubhamai/Airliner/releases', '_blank');
+									// router.push('https://github.com/Shubhamai/Airliner/releases');
+
+								// }}
+								href="https://github.com/Shubhamai/Airliner/releases"
+								target='_blank'
 
 							>
 								Download for Windows
 								<ChevronRight />
-							</Button>
+							</Link>
 							{/* {userStatus === 'user' ? (
 					<Button asChild>
 						<Link href="/dashboard" className="text-sm">
