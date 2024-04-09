@@ -8,16 +8,33 @@
 	import { SettingsState } from '../../state';
 
 	onMount(async () => {
-		const { data, error } = await supabase.auth.signInAnonymously();
 
+		// Check if user is already logged in
 		const {
 			data: { user: UserData }
 		} = await supabase.auth.getUser();
 
-		$SettingsState = {
-			...$SettingsState,
-			user: UserData
-		};
+		if (UserData) {
+			$SettingsState = {
+				...$SettingsState,
+				user: UserData
+			};
+		} else {
+			const {
+			data: { user: UserData }
+		} = await supabase.auth.signInAnonymously();
+
+		if (UserData) {
+			$SettingsState = {
+				...$SettingsState,
+				user: UserData
+			};
+
+		}
+		
+	}
+
+
 	});
 
 	const onLoginClick = async () => {
@@ -63,10 +80,10 @@
 			</a>
 			<a
 				class="flex flex-row justify-between items-center pr-4 shadow-sm border border-slate-300 hover:shadow-md w-full rounded-md px-2 py-1"
-				href={`${PUBLIC_ORIGIN}/dashboard`}
+				href={`${PUBLIC_ORIGIN}`}
 				target="_blank"
 			>
-				Dashboard
+				Website
 				<ArrowUpRight class="stroke-slate-500" size={18} />
 			</a>
 

@@ -184,7 +184,7 @@
 	>
 		<!-- <GetSimbrief messages={$messages} {setMessages} /> -->
 		<h6 class="justify-center text-center text-slate-600 font-normal italic">
-			{title}
+			{title == '' ? 'No Simbrief Data Found' : title}
 		</h6>
 		<ChatMessages {messages} />
 	</div>

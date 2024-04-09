@@ -30,7 +30,6 @@ import {
 	Mail
 } from 'lucide-react';
 import Link from 'next/link';
-import { supabase } from '@/utils/supabase';
 import { useAppState } from '@/state/appState';
 
 export default function Home() {
@@ -40,25 +39,6 @@ export default function Home() {
 
 	const [email, setEmail] = useState('');
 	const [request, setRequest] = useState('');
-
-	useEffect(() => {
-
-		const addAnonymousUser = async () => {
-			const { data, error } = await supabase.auth.signInAnonymously();
-
-
-		if (error) {
-			toast({
-				title: 'Error',
-				description: error.message
-			});
-		}
-	
-	}
-
-	addAnonymousUser()
-	}
-	, []);
 
 	return (
 		<div className="flex flex-col items-center justify-between min-h-screen py-4">
